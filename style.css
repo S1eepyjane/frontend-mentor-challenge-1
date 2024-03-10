@@ -1,0 +1,149 @@
+:root{
+    --ff-sans: 'Barlow Semi Condensed', sans-serif;
+    --fs-small: 13px;
+    --fs-normal: 16px;
+    --fw-light: ;
+    --fw-normal: 400;
+    --fw-bold: 600;
+
+    --clr-Moderateviolet: hsl(263, 55%, 52%);
+    --clr-Verydarkgrayishblue: hsl(217, 19%, 35%);
+    --clr-Verydarkblackishblue: hsl(219, 29%, 14%);
+    --clr-White: hsl(0, 0%, 100%);
+    --clr-Lightgray: hsl(0, 0%, 81%);
+    --clr-Lightgrayishblue: hsl(210, 46%, 95%);
+    --clr-white: #fff;
+}
+
+html{
+    font-family: var(--ff-sans);
+    color: var(--clr-Verydarkblackishblue);
+    font-weight: var(--fw-normal);
+    font-size: var(--fs-small);
+    /* line-height: 1.4; */
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--clr-Lightgrayishblue);
+}
+
+img{
+    display: block;
+}
+
+.container{
+    margin-inline: auto;
+    width: min(90%, 80rem);
+}
+
+section{
+    padding: 4rem 0;
+    @media (min-width:40em){
+        padding: 7rem 0;
+    }
+}
+
+.section-1 .container{
+    display: grid;
+    gap: 2rem;
+}
+
+.section-1 .container > * {
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.section-1 p{
+    opacity: 50%;
+    margin: 0;
+}
+
+.section-1 .container > :first-child{
+    background-image: url(images/bg-pattern-quotation.svg);
+    background-size: 32%;
+    background-position: top right 11%;
+    background-repeat: no-repeat;
+
+}
+
+.profile{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    
+}
+
+.profile img{
+    border-radius: 50%;
+    border: 3px solid rgb(159, 140, 159);
+    max-width: 3rem;
+}
+
+.profile h3{
+    margin: 0 0 .4rem 0;
+}
+
+
+.bg-violet{
+    background-color: var(--clr-Moderateviolet);
+}
+
+.bg-gray{
+    background-color: var(--clr-Verydarkgrayishblue);
+}
+
+.bg-dark{
+    background-color: var(--clr-Verydarkblackishblue);
+}
+
+.bg-white{
+    background-color: var(--clr-white);
+}
+
+.font-light{
+    color: var(--clr-White);
+}
+
+
+@media (max-width: 865px) and (min-width: 540px){
+    
+    .section-1 .container{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .grid-col-span-2{
+        grid-column: span 2;
+    }
+
+    .section-1 .container >:last-child{
+        grid-column: span 2;
+    }
+}
+
+
+
+@media (min-width: 865px){
+    .section-1 .container{
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .section-1 .item-5{
+        grid-area: 1 / 4 / 3 / 5;
+        
+    }
+
+    .grid-col-span-2{
+        grid-column: span 2;
+    }
+}
+
+
+
+
+
